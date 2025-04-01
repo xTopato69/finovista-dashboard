@@ -1,26 +1,233 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>finovista-dashboard</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="Lovable Generated Project" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <title>Financial Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <meta name="description" content="Financial Dashboard" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h1>FinoVista</h1>
+          <button id="close-sidebar" class="close-btn">&times;</button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="#" class="sidebar-link active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fas fa-wallet"></i>
+            <span>Transactions</span>
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fas fa-chart-bar"></i>
+            <span>Analytics</span>
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+
+          <div class="sidebar-divider"></div>
+
+          <a href="#" class="sidebar-link">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Navbar -->
+        <header class="navbar">
+          <div class="navbar-left">
+            <button id="toggle-sidebar" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="search-container">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" placeholder="Search..." class="search-input" />
+            </div>
+          </div>
+
+          <div class="navbar-right">
+            <button class="icon-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-dot"></span>
+            </button>
+            <button class="avatar-btn">
+              <i class="fas fa-user"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="dashboard-main">
+          <!-- Welcome Section -->
+          <section class="welcome-section">
+            <h1>Welcome back, Emma!</h1>
+            <p>Here's what's happening with your finances today.</p>
+          </section>
+
+          <!-- Finance Summary Cards -->
+          <section class="finance-summary">
+            <div class="summary-card">
+              <div class="card-header">
+                <p>Total Balance</p>
+                <div class="card-icon neutral-icon">
+                  <i class="fas fa-wallet"></i>
+                </div>
+              </div>
+              <h3 class="card-value">$12,560.00</h3>
+            </div>
+
+            <div class="summary-card">
+              <div class="card-header">
+                <p>Income</p>
+                <div class="card-icon income-icon">
+                  <i class="fas fa-arrow-up"></i>
+                </div>
+              </div>
+              <h3 class="card-value">$6,240.00</h3>
+              <p class="card-trend income-text">+12% from last month</p>
+            </div>
+
+            <div class="summary-card">
+              <div class="card-header">
+                <p>Expenses</p>
+                <div class="card-icon expense-icon">
+                  <i class="fas fa-arrow-down"></i>
+                </div>
+              </div>
+              <h3 class="card-value">$2,850.00</h3>
+              <p class="card-trend expense-text">-3% from last month</p>
+            </div>
+          </section>
+
+          <!-- Main Dashboard Grid -->
+          <div class="dashboard-grid">
+            <!-- Chart Section -->
+            <section class="chart-section">
+              <h2>Income vs Expenses</h2>
+              <div class="chart-container">
+                <img src="https://via.placeholder.com/800x400?text=Income+vs+Expenses+Chart" alt="Income vs Expenses Chart" class="placeholder-chart" />
+              </div>
+            </section>
+
+            <!-- Transactions Section -->
+            <section class="transactions-section">
+              <div class="section-header">
+                <h2>Recent Transactions</h2>
+                <a href="#" class="view-all">View All</a>
+              </div>
+
+              <div class="transactions-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Description</th>
+                      <th class="hide-mobile">Category</th>
+                      <th class="align-right">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-muted">Aug 25, 2023</td>
+                      <td>
+                        <div class="transaction-info">
+                          <span class="transaction-icon">
+                            <i class="fas fa-coffee"></i>
+                          </span>
+                          <span>Coffee Shop</span>
+                        </div>
+                      </td>
+                      <td class="hide-mobile text-muted">Food & Drink</td>
+                      <td class="align-right expense-text">-$5.40</td>
+                    </tr>
+                    <tr>
+                      <td class="text-muted">Aug 24, 2023</td>
+                      <td>
+                        <div class="transaction-info">
+                          <span class="transaction-icon">
+                            <i class="fas fa-arrow-up"></i>
+                          </span>
+                          <span>Salary Deposit</span>
+                        </div>
+                      </td>
+                      <td class="hide-mobile text-muted">Income</td>
+                      <td class="align-right income-text">+$2,400.00</td>
+                    </tr>
+                    <tr>
+                      <td class="text-muted">Aug 24, 2023</td>
+                      <td>
+                        <div class="transaction-info">
+                          <span class="transaction-icon">
+                            <i class="fas fa-shopping-basket"></i>
+                          </span>
+                          <span>Grocery Store</span>
+                        </div>
+                      </td>
+                      <td class="hide-mobile text-muted">Shopping</td>
+                      <td class="align-right expense-text">-$68.50</td>
+                    </tr>
+                    <tr>
+                      <td class="text-muted">Aug 23, 2023</td>
+                      <td>
+                        <div class="transaction-info">
+                          <span class="transaction-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                          </span>
+                          <span>Mobile Bill</span>
+                        </div>
+                      </td>
+                      <td class="hide-mobile text-muted">Bills</td>
+                      <td class="align-right expense-text">-$45.00</td>
+                    </tr>
+                    <tr>
+                      <td class="text-muted">Aug 22, 2023</td>
+                      <td>
+                        <div class="transaction-info">
+                          <span class="transaction-icon">
+                            <i class="fas fa-utensils"></i>
+                          </span>
+                          <span>Restaurant</span>
+                        </div>
+                      </td>
+                      <td class="hide-mobile text-muted">Food & Drink</td>
+                      <td class="align-right expense-text">-$36.20</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Simple script just to toggle sidebar for mobile view -->
+    <script>
+      document.getElementById('toggle-sidebar').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('show-mobile');
+      });
+      
+      document.getElementById('close-sidebar').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.remove('show-mobile');
+      });
+    </script>
+    
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
