@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions | FinoVista</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <meta name="description" content="Transactions Page" />
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h1>FinoVista</h1>
+          <button id="close-sidebar" class="close-btn">&times;</button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="index.html" class="sidebar-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="transactions.html" class="sidebar-link active">
+            <i class="fas fa-wallet"></i>
+            <span>Transactions</span>
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fas fa-chart-bar"></i>
+            <span>Analytics</span>
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+
+          <div class="sidebar-divider"></div>
+
+          <a href="#" class="sidebar-link">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Navbar -->
+        <header class="navbar">
+          <div class="navbar-left">
+            <button id="toggle-sidebar" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="search-container">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" placeholder="Search..." class="search-input" />
+            </div>
+          </div>
+
+          <div class="navbar-right">
+            <button class="icon-btn">
+              <i class="fas fa-bell"></i>
+              <span class="notification-dot"></span>
+            </button>
+            <button class="avatar-btn">
+              <i class="fas fa-user"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- Transactions Content -->
+        <main class="dashboard-main">
+          <!-- Transactions Header -->
+          <div class="transactions-header">
+            <h1>Transaction History</h1>
+            <button class="new-transaction-btn">
+              <i class="fas fa-plus"></i>
+              New Transaction
+            </button>
+          </div>
+
+          <!-- Filters Section -->
+          <div class="filters-section">
+            <div class="filters-container">
+              <!-- Date Range Filter -->
+              <div class="filter-group">
+                <label for="date-range">Date Range</label>
+                <select id="date-range" class="filter-select">
+                  <option value="all">All Time</option>
+                  <option value="today">Today</option>
+                  <option value="week">This Week</option>
+                  <option value="month">This Month</option>
+                  <option value="year">This Year</option>
+                  <option value="custom">Custom Range</option>
+                </select>
+              </div>
+
+              <!-- Category Filter -->
+              <div class="filter-group">
+                <label for="category">Category</label>
+                <select id="category" class="filter-select">
+                  <option value="all">All Categories</option>
+                  <option value="food">Food & Drink</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="housing">Housing & Rent</option>
+                  <option value="transportation">Transportation</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="utilities">Utilities</option>
+                  <option value="income">Income</option>
+                </select>
+              </div>
+
+              <!-- Type Filter -->
+              <div class="filter-group">
+                <label for="type">Type</label>
+                <select id="type" class="filter-select">
+                  <option value="all">All Types</option>
+                  <option value="income">Income</option>
+                  <option value="expense">Expense</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Transaction Search -->
+            <div class="transaction-search">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" placeholder="Search transactions..." class="transaction-search-input" />
+            </div>
+          </div>
+
+          <!-- Transactions Table -->
+          <div class="transactions-table-container">
+            <table class="transactions-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Amount</th>
+                  <th>Type</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Date">Aug 30, 2023</td>
+                  <td data-label="Description">
+                    <div class="transaction-info">
+                      <span class="transaction-icon">
+                        <i class="fas fa-briefcase"></i>
+                      </span>
+                      <span>Salary Deposit</span>
+                    </div>
+                  </td>
+                  <td data-label="Category">Income</td>
+                  <td data-label="Amount" class="amount">$3,500.00</td>
+                  <td data-label="Type"><span class="badge income">Income</span></td>
+                  <td data-label="Actions" class="actions">
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Aug 28, 2023</td>
+                  <td data-label="Description">
+                    <div class="transaction-info">
+                      <span class="transaction-icon">
+                        <i class="fas fa-home"></i>
+                      </span>
+                      <span>Apartment Rent</span>
+                    </div>
+                  </td>
+                  <td data-label="Category">Housing & Rent</td>
+                  <td data-label="Amount" class="amount">$1,200.00</td>
+                  <td data-label="Type"><span class="badge expense">Expense</span></td>
+                  <td data-label="Actions" class="actions">
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Aug 27, 2023</td>
+                  <td data-label="Description">
+                    <div class="transaction-info">
+                      <span class="transaction-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                      </span>
+                      <span>Grocery Shopping</span>
+                    </div>
+                  </td>
+                  <td data-label="Category">Food & Drink</td>
+                  <td data-label="Amount" class="amount">$85.20</td>
+                  <td data-label="Type"><span class="badge expense">Expense</span></td>
+                  <td data-label="Actions" class="actions">
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Aug 25, 2023</td>
+                  <td data-label="Description">
+                    <div class="transaction-info">
+                      <span class="transaction-icon">
+                        <i class="fas fa-bolt"></i>
+                      </span>
+                      <span>Electricity Bill</span>
+                    </div>
+                  </td>
+                  <td data-label="Category">Utilities</td>
+                  <td data-label="Amount" class="amount">$94.50</td>
+                  <td data-label="Type"><span class="badge expense">Expense</span></td>
+                  <td data-label="Actions" class="actions">
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Aug 24, 2023</td>
+                  <td data-label="Description">
+                    <div class="transaction-info">
+                      <span class="transaction-icon">
+                        <i class="fas fa-film"></i>
+                      </span>
+                      <span>Movie Tickets</span>
+                    </div>
+                  </td>
+                  <td data-label="Category">Entertainment</td>
+                  <td data-label="Amount" class="amount">$32.00</td>
+                  <td data-label="Type"><span class="badge expense">Expense</span></td>
+                  <td data-label="Actions" class="actions">
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Aug 22, 2023</td>
+                  <td data-label="Description">
+                    <div class="transaction-info">
+                      <span class="transaction-icon">
+                        <i class="fas fa-car"></i>
+                      </span>
+                      <span>Fuel</span>
+                    </div>
+                  </td>
+                  <td data-label="Category">Transportation</td>
+                  <td data-label="Amount" class="amount">$45.80</td>
+                  <td data-label="Type"><span class="badge expense">Expense</span></td>
+                  <td data-label="Actions" class="actions">
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Aug 20, 2023</td>
+                  <td data-label="Description">
+                    <div class="transaction-info">
+                      <span class="transaction-icon">
+                        <i class="fas fa-tshirt"></i>
+                      </span>
+                      <span>Clothing Store</span>
+                    </div>
+                  </td>
+                  <td data-label="Category">Shopping</td>
+                  <td data-label="Amount" class="amount">$128.50</td>
+                  <td data-label="Type"><span class="badge expense">Expense</span></td>
+                  <td data-label="Actions" class="actions">
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Aug 15, 2023</td>
+                  <td data-label="Description">
+                    <div class="transaction-info">
+                      <span class="transaction-icon">
+                        <i class="fas fa-gift"></i>
+                      </span>
+                      <span>Freelance Work</span>
+                    </div>
+                  </td>
+                  <td data-label="Category">Income</td>
+                  <td data-label="Amount" class="amount">$450.00</td>
+                  <td data-label="Type"><span class="badge income">Income</span></td>
+                  <td data-label="Actions" class="actions">
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Pagination -->
+          <div class="pagination">
+            <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <span class="pagination-ellipsis">...</span>
+            <button class="pagination-btn">10</button>
+            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Simple script just to toggle sidebar for mobile view -->
+    <script>
+      document.getElementById('toggle-sidebar').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('show-mobile');
+      });
+      
+      document.getElementById('close-sidebar').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.remove('show-mobile');
+      });
+    </script>
+  </body>
+</html>
